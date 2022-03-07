@@ -19,7 +19,6 @@ def read_template(path):
     try:
         with open(path, 'r') as txt:
             content = txt.read()
-            print(content)
             return(content)
     except FileNotFoundError:
         raise FileNotFoundError('File not found')
