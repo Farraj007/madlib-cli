@@ -45,13 +45,17 @@ def parse_template(content):
 
 
 def merge(content, inputs):
+    with open("./assets/template_copy.txt", "w") as f:
+            f.write(f"THIS IS A COPY OF\n{content.format(*inputs)}")
     return content.format(*inputs)
     
-
-def madlib_game():
+if __name__=="__main__":
+ def madlib_game():
     welcome()
     template = read_template("assets/template.txt")
     content, correct_list = parse_template(template)
-    
+    print (f'\nNow i will ask you to give me Words to cpmplete the game, don\'t overthink it! \n ')
     inputs = [input(f"\nPlease enter a {i}: ") for i in correct_list]
     return merge(content, inputs)
+
+ madlib_game()
